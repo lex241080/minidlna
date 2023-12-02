@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  app:
+    image: lex241080/minidlna
+    network_mode: "host"
+    restart: always
+    environment:
+      - MINIDLNA_MEDIA_DIR_1=V,/media/video
+      - MINIDLNA_MEDIA_DIR_2=A,/media/audio
+      - MINIDLNA_FRIENDLY_NAME=DLNA Server
+    volumes:
+      - /srv/samba/Video:/media/video
+      - /srv/samba/Audio:/media/audio
