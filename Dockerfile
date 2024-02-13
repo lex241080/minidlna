@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-LABEL maintainer="lex_admin <andrey@best-home.xyz>" \
+LABEL maintainer="lex_admin <lex241080@gmail.com>" \
   name="MiniDLNA" description="MiniDLNA Server."
 
 COPY entrypoint.sh / 
