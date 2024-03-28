@@ -2,13 +2,18 @@ version: '2'
 
 services:
   app:
-    image: lex241080/minidlna
+    image: minidlna
+    build: .
+    container_name: minidlna
     network_mode: "host"
     restart: always
+
     environment:
       - MINIDLNA_MEDIA_DIR_1=V,/media/video
       - MINIDLNA_MEDIA_DIR_2=A,/media/audio
+      - MINIDLNA_MEDIA_DIR_3=P,/media/pictures
       - MINIDLNA_FRIENDLY_NAME=DLNA Server
     volumes:
-      - /srv/samba/Video:/media/video
-      - /srv/samba/Audio:/media/audio
+      - /srv/Video:/media/video
+      - /srv/Audio:/media/audio
+      - /srv/Pictures:/media/pictures

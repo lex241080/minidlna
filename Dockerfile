@@ -6,4 +6,7 @@ LABEL maintainer="lex_admin <lex241080@gmail.com>" \
 COPY entrypoint.sh / 
 RUN chmod +x ./entrypoint.sh && apk --no-cache add bash curl minidlna tini shadow su-exec alpine-conf inotify-tools
 
+EXPOSE 1900/udp
+EXPOSE 8200
+
 ENTRYPOINT ["/entrypoint.sh"]
